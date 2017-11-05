@@ -37,8 +37,8 @@ find */*/app/build.gradle -exec sed -i "s/$prefix$sub/$prefix$goal/g" {} \;
 
 # Set build tools version.
 prefix="buildToolsVersion "
-sub="\s*[\"\']$dots3"
-goal="\"27.0.0"
+sub="\s*[\"\']$dots3[\"\']"
+goal="\"27.0.0\""
 find */*/app/build.gradle -exec sed -i "s/$prefix$sub/$prefix$goal/g" {} \;
 
 # Set minimal SDK version.
