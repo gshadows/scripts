@@ -30,9 +30,9 @@ find $mainpath/gradle/wrapper/gradle-wrapper.properties -exec sed -i "s/$sub/$go
 #find $mainpath/build.gradle -exec perl -0777 -pi -e "s/$sub/$goal/g" {} \;
 
 # Change build directory location.
-sub="C\:\/tmp\/"
-goal="E:\/DENIS\/Projects\/Android\/GoogleChallenge\/_build\/"
-find $mainpath/build.gradle -exec sed -i "s/$sub/$goal/g" {} \;
+#sub="C\:\/tmp\/"
+#goal="E:\/DENIS\/Projects\/Android\/GoogleChallenge\/_build\/"
+#find $mainpath/build.gradle -exec sed -i "s/$sub/$goal/g" {} \;
 
 # Add Google repository.
 sub="jcenter\(\)"
