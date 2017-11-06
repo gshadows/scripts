@@ -16,7 +16,7 @@ apppath="$mainpath/app"
 # Update gradle plugin version fro Android Studio 3.
 prefix="com\.android\.tools\.build\:gradle\:"
 sub="$vers"
-goal="3.0.0-rc2"
+goal="3.0.0"
 find $mainpath/build.gradle -exec sed -i "s/$prefix$sub/$prefix$goal/g" {} \;
 
 # Update gradle wrapper.
