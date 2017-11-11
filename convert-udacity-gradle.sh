@@ -1,22 +1,22 @@
 #!/bin/sh
 
 # === OPTIONS ===
-version_gradleplugin=    "3.0.0"
-version_gradle=          "4.1"
+version_gradleplugin="3.0.0"
+version_gradle="4.1"
 
-version_buildtools=      "27.0.0"
-version_minsdk=          "15"
-version_compilesdk=      "26"
-version_targetsdk=       "26"
+version_buildtools="27.0.0"
+version_minsdk="15"
+version_compilesdk="26"
+version_targetsdk="26"
 
-version_appcompat=       "26.1.0"
-version_recyclerview=    "26.1.0"
-version_annotations=     "26.1.0"
+version_appcompat="26.1.0"
+version_recyclerview="26.1.0"
+version_annotations="26.1.0"
 
 version_constraintlayout="1.1.0-beta3"
 
-version_testrunner=      "1.0.1"
-version_testrules=       "1.0.1"
+version_testrunner="1.0.1"
+version_testrules="1.0.1"
 
 mainpath="*/*"
 
