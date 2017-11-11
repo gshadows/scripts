@@ -1,5 +1,24 @@
 #!/bin/sh
 
+# === OPTIONS ===
+version_gradleplugin=    "3.0.0"
+version_gradle=          "4.1"
+
+version_buildtools=      "27.0.0"
+version_minsdk=          "15"
+version_compilesdk=      "26"
+version_targetsdk=       "26"
+
+version_appcompat=       "26.1.0"
+version_recyclerview=    "26.1.0"
+version_annotations=     "26.1.0"
+
+version_constraintlayout="1.1.0-beta3"
+
+version_testrunner=      "1.0.1"
+version_testrules=       "1.0.1"
+
+
 # Some templates.
 num="[0-9]\+"
 optdot="\(\.$num\)\?"
@@ -16,12 +35,11 @@ apppath="$mainpath/app"
 # Update gradle plugin version fro Android Studio 3.
 prefix="com\.android\.tools\.build\:gradle\:"
 sub="$vers"
-goal="3.0.0"
-find $mainpath/build.gradle -exec sed -i "s/$prefix$sub/$prefix$goal/g" {} \;
+find $mainpath/build.gradle -exec sed -i "s/$prefix$sub/$prefix$version_gradleplugin/g" {} \;
 
 # Update gradle wrapper.
 sub="gradle\-$vers\-"
-goal="gradle-4.1-"
+goal="gradle-$version_gradle-"
 find $mainpath/gradle/wrapper/gradle-wrapper.properties -exec sed -i "s/$sub/$goal/g" {} \;
 
 # Remove build directory change.
@@ -52,56 +70,52 @@ find $mainpath/build.gradle.bak -exec rm -f {} \;
 # Set compile SDK version.
 prefix="compileSdkVersion "
 sub="\s*$num"
-goal="26"
-find $apppath/build.gradle -exec sed -i "s/$prefix$sub/$prefix$goal/g" {} \;
+find $apppath/build.gradle -exec sed -i "s/$prefix$sub/$prefix$version_compilesdk/g" {} \;
 
 # Set build tools version.
 prefix="buildToolsVersion "
 sub="\s*[\"\']$vers[\"\']"
-goal="\"27.0.0\""
-find $apppath/build.gradle -exec sed -i "s/$prefix$sub/$prefix$goal/g" {} \;
+find $apppath/build.gradle -exec sed -i "s/$prefix$sub/$prefix\"$version_buildtools\"/g" {} \;
 
 # Set minimal SDK version.
 prefix="minSdkVersion "
 sub="\s*$num"
-goal="15"
-find $apppath/build.gradle -exec sed -i "s/$prefix$sub/$prefix$goal/g" {} \;
+find $apppath/build.gradle -exec sed -i "s/$prefix$sub/$prefix$version_minsdk/g" {} \;
 
 # Set target SDK version.
 prefix="targetSdkVersion "
 sub="\s*$num"
-goal="26"
-find $apppath/build.gradle -exec sed -i "s/$prefix$sub/$prefix$goal/g" {} \;
+find $apppath/build.gradle -exec sed -i "s/$prefix$sub/$prefix$version_targetsdk/g" {} \;
 
 # Update appcompat library version.
 prefix="com\.android\.support\:appcompat\-v7\:"
 sub="$vers"
-goal="26.1.0"
-find $apppath/build.gradle -exec sed -i "s/$prefix$sub/$prefix$goal/g" {} \;
+find $apppath/build.gradle -exec sed -i "s/$prefix$sub/$prefix$version_appcompat/g" {} \;
 
 # Update support-annotations library version.
 prefix="com\.android\.support\:support\-annotations\:"
 sub="$vers"
-goal="26.1.0"
-find $apppath/build.gradle -exec sed -i "s/$prefix$sub/$prefix$goal/g" {} \;
+find $apppath/build.gradle -exec sed -i "s/$prefix$sub/$prefix$version_annotations/g" {} \;
 
 # Update test:runner library version.
 prefix="com\.android\.support\.test\:runner\:"
 sub="$vers"
-goal="1.0.1"
-find $apppath/build.gradle -exec sed -i "s/$prefix$sub/$prefix$goal/g" {} \;
+find $apppath/build.gradle -exec sed -i "s/$prefix$sub/$prefix$version_testrunner/g" {} \;
 
 # Update test:rules library version.
 prefix="com\.android\.support\.test\:rules\:"
 sub="$vers"
-goal="1.0.1"
-find $apppath/build.gradle -exec sed -i "s/$prefix$sub/$prefix$goal/g" {} \;
+find $apppath/build.gradle -exec sed -i "s/$prefix$sub/$prefix$version_testrules/g" {} \;
 
 # Update constraints layout library version.
 prefix="com\.android\.support\.constraint\:constraint\-layout\:"
 sub="$vers"
-goal="1.1.0-beta3"
-find $apppath/build.gradle -exec sed -i "s/$prefix$sub/$prefix$goal/g" {} \;
+find $apppath/build.gradle -exec sed -i "s/$prefix$sub/$prefix$version_constraintlayout/g" {} \;
+
+# Update recycler view library version.
+prefix="com\.android\.support\:recyclerview\-v7\:"
+sub="$vers"
+find $apppath/build.gradle -exec sed -i "s/$prefix$sub/$prefix$version_recyclerview/g" {} \;
 
 # Remove backup file.
 find $apppath/build.gradle.bak -exec rm -f {} \;
