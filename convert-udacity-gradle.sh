@@ -18,6 +18,8 @@ version_constraintlayout="1.1.0-beta3"
 version_testrunner=      "1.0.1"
 version_testrules=       "1.0.1"
 
+mainpath="*/*"
+
 
 # Some templates.
 num="[0-9]\+"
@@ -26,7 +28,6 @@ optrc="\(\-rc$num\)\?"
 optbeta="\(\-beta$num\)\?"
 vers="$num\(\.$num\)*$optrc$optbeta"
 
-mainpath="*/*"
 apppath="$mainpath/app"
 
 
