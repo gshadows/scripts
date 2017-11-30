@@ -12,6 +12,7 @@ version_targetsdk="26"
 version_appcompat="26.1.0"
 version_recyclerview="26.1.0"
 version_annotations="26.1.0"
+version_preference="26.1.0"
 
 version_constraintlayout="1.1.0-beta3"
 
@@ -117,6 +118,11 @@ find $apppath/build.gradle -exec sed -i "s/$prefix$sub/$prefix$version_constrain
 prefix="com\.android\.support\:recyclerview\-v7\:"
 sub="$vers"
 find $apppath/build.gradle -exec sed -i "s/$prefix$sub/$prefix$version_recyclerview/g" {} \;
+
+# Update preference library version.
+prefix="com\.android\.support\:preference\-v7\:"
+sub="$vers"
+find $apppath/build.gradle -exec sed -i "s/$prefix$sub/$prefix$version_preference/g" {} \;
 
 # Remove backup file.
 find $apppath/build.gradle.bak -exec rm -f {} \;
