@@ -4,7 +4,7 @@
 version_gradleplugin="3.0.1"
 version_gradle="4.1"
 
-version_buildtools="27.0.0"
+version_buildtools="27.0.3"
 version_minsdk="15"
 version_compilesdk="26"
 version_targetsdk="26"
@@ -13,11 +13,13 @@ version_appcompat="26.1.0"
 version_recyclerview="26.1.0"
 version_annotations="26.1.0"
 version_preference="26.1.0"
+version_design="26.1.0"
 
 version_constraintlayout="1.1.0-beta3"
 
 version_testrunner="1.0.1"
 version_testrules="1.0.1"
+#version_junit="4.12"
 
 mainpath="*/*"
 
@@ -109,10 +111,20 @@ prefix="com\.android\.support\.test\:rules\:"
 sub="$vers"
 find $apppath/build.gradle -exec sed -i "s/$prefix$sub/$prefix$version_testrules/g" {} \;
 
+# Update junit library version.
+#prefix="junit\:junit\:"
+#sub="$vers"
+#find $apppath/build.gradle -exec sed -i "s/$prefix$sub/$prefix$version_junit/g" {} \;
+
 # Update constraints layout library version.
 prefix="com\.android\.support\.constraint\:constraint\-layout\:"
 sub="$vers"
 find $apppath/build.gradle -exec sed -i "s/$prefix$sub/$prefix$version_constraintlayout/g" {} \;
+
+# Update design library version.
+prefix="com\.android\.support\:design\:"
+sub="$vers"
+find $apppath/build.gradle -exec sed -i "s/$prefix$sub/$prefix$version_design/g" {} \;
 
 # Update recycler view library version.
 prefix="com\.android\.support\:recyclerview\-v7\:"
