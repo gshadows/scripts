@@ -15,7 +15,7 @@ version_annotations="26.1.0"
 version_preference="26.1.0"
 version_design="26.1.0"
 
-version_constraintlayout="1.1.0-beta3"
+version_constraintlayout="1.0.2"
 
 version_testrunner="1.0.1"
 version_testrules="1.0.1"
