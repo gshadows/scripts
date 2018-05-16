@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # === OPTIONS ===
-version_gradleplugin="3.1.1"
+version_gradleplugin="3.1.2"
 version_gradle="4.4"
 
 version_buildtools="27.0.3"
@@ -15,13 +15,13 @@ version_annotations="26.1.0"
 version_preference="26.1.0"
 version_design="26.1.0"
 
-version_constraintlayout="1.0.2"
+version_constraintlayout="1.1.0"
 
 version_testrunner="1.0.1"
 version_testrules="1.0.1"
 #version_junit="4.12"
 
-mainpath="*/*"
+mainpath="*"
 
 
 # Some templates.
