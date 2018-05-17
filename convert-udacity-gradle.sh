@@ -136,5 +136,11 @@ prefix="com\.android\.support\:preference\-v7\:"
 sub="$vers"
 find $apppath/build.gradle -exec sed -i "s/$prefix$sub/$prefix$version_preference/g" {} \;
 
+# Change deprecated "compile" to "implementation".
+sub="$vers"
+find $apppath/build.gradle -exec sed -i "s/compile\ /implementation\ /g" {} \;
+find $apppath/build.gradle -exec sed -i "s/testCompile/testImplementation/g" {} \;
+find $apppath/build.gradle -exec sed -i "s/androidTestCompile/androidTestImplementation/g" {} \;
+
 # Remove backup file.
 find $apppath/build.gradle.bak -exec rm -f {} \;
