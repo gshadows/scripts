@@ -19,9 +19,16 @@ version_constraintlayout="1.1.1"
 
 version_testrunner="1.0.1"
 version_testrules="1.0.1"
-#version_junit="4.12"
+version_junit="4.12"
+version_espresso="3.0.2"
 
+# Projects location variants (where top build.gradle and app/ folder located):
+# .   - Current directory (single project).
+# *   - Subdirectories one level below.
+# */* - Subdirectories two levels below.
+#mainpath="."
 mainpath="*"
+#mainpath="*/*"
 
 
 # Some templates.
@@ -58,11 +65,11 @@ find $mainpath/gradle/wrapper/gradle-wrapper.properties -exec sed -i "s/$sub/$go
 
 # Add Google repository.
 sub="jcenter\(\)"
-goal="google()\n        jcenter()"
+goal="google()\n    jcenter()"
 find $mainpath/build.gradle -exec perl -0777 -pi -e "s/$sub/$goal/g" {} \;
 
 # Remove duplicate Google repository.
-sub="google\(\)\n        google\(\)"
+sub="google\(\)\n *google\(\)"
 goal="google()"
 find $mainpath/build.gradle -exec perl -0777 -pi -e "s/$sub/$goal/g" {} \;
 
@@ -112,9 +119,38 @@ sub="$vers"
 find $apppath/build.gradle -exec sed -i "s/$prefix$sub/$prefix$version_testrules/g" {} \;
 
 # Update junit library version.
-#prefix="junit\:junit\:"
-#sub="$vers"
-#find $apppath/build.gradle -exec sed -i "s/$prefix$sub/$prefix$version_junit/g" {} \;
+prefix="junit\:junit\:"
+sub="$vers"
+find $apppath/build.gradle -exec sed -i "s/$prefix$sub/$prefix$version_junit/g" {} \;
+
+# Update Espresso library version.
+prefix="com\.android\.support\.test\.espresso\:espresso-core\:"
+sub="$vers"
+find $apppath/build.gradle -exec sed -i "s/$prefix$sub/$prefix$version_espresso/g" {} \;
+
+prefix="com\.android\.support\.test\.espresso\:espresso-intents\:"
+sub="$vers"
+find $apppath/build.gradle -exec sed -i "s/$prefix$sub/$prefix$version_espresso/g" {} \;
+
+prefix="com\.android\.support\.test\.espresso\:espresso-idling-resource\:"
+sub="$vers"
+find $apppath/build.gradle -exec sed -i "s/$prefix$sub/$prefix$version_espresso/g" {} \;
+
+prefix="com\.android\.support\.test\.espresso\:espresso-contrib\:"
+sub="$vers"
+find $apppath/build.gradle -exec sed -i "s/$prefix$sub/$prefix$version_espresso/g" {} \;
+
+prefix="com\.android\.support\.test\.espresso\:espresso-web\:"
+sub="$vers"
+find $apppath/build.gradle -exec sed -i "s/$prefix$sub/$prefix$version_espresso/g" {} \;
+
+prefix="com\.android\.support\.test\.espresso\:espresso-remote\:"
+sub="$vers"
+find $apppath/build.gradle -exec sed -i "s/$prefix$sub/$prefix$version_espresso/g" {} \;
+
+prefix="com\.android\.support\.test\.espresso\:espresso-accessibility\:"
+sub="$vers"
+find $apppath/build.gradle -exec sed -i "s/$prefix$sub/$prefix$version_espresso/g" {} \;
 
 # Update constraints layout library version.
 prefix="com\.android\.support\.constraint\:constraint\-layout\:"
@@ -143,4 +179,4 @@ find $apppath/build.gradle -exec sed -i "s/testCompile/testImplementation/g" {} 
 find $apppath/build.gradle -exec sed -i "s/androidTestCompile/androidTestImplementation/g" {} \;
 
 # Remove backup file.
-find $apppath/build.gradle.bak -exec rm -f {} \;
+#find $apppath/build.gradle.bak -exec rm -f {} \;
