@@ -4,18 +4,18 @@
 version_gradleplugin="3.1.2"
 version_gradle="4.4"
 
-version_buildtools="27.0.3"
+version_buildtools="28.0.0"
 version_minsdk="15"
-version_compilesdk="26"
-version_targetsdk="26"
+version_compilesdk="28"
+version_targetsdk="28"
 
-version_appcompat="26.1.0"
-version_recyclerview="26.1.0"
-version_annotations="26.1.0"
-version_preference="26.1.0"
-version_design="26.1.0"
+version_appcompat="27.1.1"
+version_recyclerview="27.1.1"
+version_annotations="27.1.1"
+version_preference="27.1.1"
+version_design="27.1.1"
 
-version_constraintlayout="1.1.0"
+version_constraintlayout="1.1.1"
 
 version_testrunner="1.0.1"
 version_testrules="1.0.1"
