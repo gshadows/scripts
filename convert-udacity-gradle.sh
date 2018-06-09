@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # === OPTIONS ===
-version_gradleplugin="3.1.2"
+version_gradleplugin="3.1.3"
 version_gradle="4.4"
 
 version_buildtools="28.0.0"
@@ -9,16 +9,16 @@ version_minsdk="15"
 version_compilesdk="28"
 version_targetsdk="28"
 
-version_appcompat="27.1.1"
-version_recyclerview="27.1.1"
-version_annotations="27.1.1"
-version_preference="27.1.1"
-version_design="27.1.1"
+version_appcompat="28.0.0"
+version_recyclerview="28.0.0"
+version_annotations="28.0.0"
+version_preference="28.0.0"
+version_design="28.0.0"
 
 version_constraintlayout="1.1.1"
 
-version_testrunner="1.0.1"
-version_testrules="1.0.1"
+version_testrunner="1.0.2"
+version_testrules="1.0.2"
 version_junit="4.12"
 version_espresso="3.0.2"
 
