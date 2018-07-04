@@ -4,7 +4,7 @@
 version_gradleplugin="3.1.3"
 version_gradle="4.4"
 
-version_buildtools="28.0.0"
+version_buildtools="28.0.1"
 version_minsdk="15"
 version_compilesdk="27"
 version_targetsdk="27"
