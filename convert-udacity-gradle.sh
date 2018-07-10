@@ -63,6 +63,11 @@ find $mainpath/gradle/wrapper/gradle-wrapper.properties -exec sed -i "s/$sub/$go
 #goal="E:\/DENIS\/Projects\/Android\/GoogleChallenge\/_build\/"
 #find $mainpath/build.gradle -exec sed -i "s/$sub/$goal/g" {} \;
 
+# Change manen repository.
+sub="mavenCentral\(\)"
+goal="jcenter()"
+find $mainpath/build.gradle -exec perl -0777 -pi -e "s/$sub/$goal/g" {} \;
+
 # Add Google repository.
 sub="jcenter\(\)"
 goal="google()\n    jcenter()"
