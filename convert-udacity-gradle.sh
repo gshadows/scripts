@@ -1,26 +1,24 @@
 #!/bin/sh
 
 # === OPTIONS ===
-version_gradleplugin="3.2.0"
-version_gradle="4.4"
+version_gradleplugin="3.2.1"
+version_gradle="4.6"
 
 version_buildtools="28.0.3"
 version_minsdk="15"
-version_compilesdk="27"
-version_targetsdk="27"
+version_compilesdk="28"
+version_targetsdk="28"
 
-version_appcompat="27.1.1"
-version_recyclerview="27.1.1"
-version_annotations="27.1.1"
-version_preference="27.1.1"
-version_design="27.1.1"
+version_support="28.0.0"
 
-version_constraintlayout="1.1.2"
+version_constraintlayout="1.1.3"
 
 version_testrunner="1.0.2"
 version_testrules="1.0.2"
 version_junit="4.12"
 version_espresso="3.0.2"
+
+version_room="1.1.1"
 
 # Projects location variants (where top build.gradle and app/ folder located):
 # .   - Current directory (single project).
@@ -106,12 +104,12 @@ find $apppath/build.gradle -exec sed -i "s/$prefix$sub/$prefix$version_targetsdk
 # Update appcompat library version.
 prefix="com\.android\.support\:appcompat\-v7\:"
 sub="$vers"
-find $apppath/build.gradle -exec sed -i "s/$prefix$sub/$prefix$version_appcompat/g" {} \;
+find $apppath/build.gradle -exec sed -i "s/$prefix$sub/$prefix$version_support/g" {} \;
 
 # Update support-annotations library version.
 prefix="com\.android\.support\:support\-annotations\:"
 sub="$vers"
-find $apppath/build.gradle -exec sed -i "s/$prefix$sub/$prefix$version_annotations/g" {} \;
+find $apppath/build.gradle -exec sed -i "s/$prefix$sub/$prefix$version_support/g" {} \;
 
 # Update test:runner library version.
 prefix="com\.android\.support\.test\:runner\:"
@@ -165,17 +163,25 @@ find $apppath/build.gradle -exec sed -i "s/$prefix$sub/$prefix$version_constrain
 # Update design library version.
 prefix="com\.android\.support\:design\:"
 sub="$vers"
-find $apppath/build.gradle -exec sed -i "s/$prefix$sub/$prefix$version_design/g" {} \;
+find $apppath/build.gradle -exec sed -i "s/$prefix$sub/$prefix$version_support/g" {} \;
 
 # Update recycler view library version.
 prefix="com\.android\.support\:recyclerview\-v7\:"
 sub="$vers"
-find $apppath/build.gradle -exec sed -i "s/$prefix$sub/$prefix$version_recyclerview/g" {} \;
+find $apppath/build.gradle -exec sed -i "s/$prefix$sub/$prefix$version_support/g" {} \;
 
 # Update preference library version.
 prefix="com\.android\.support\:preference\-v7\:"
 sub="$vers"
-find $apppath/build.gradle -exec sed -i "s/$prefix$sub/$prefix$version_preference/g" {} \;
+find $apppath/build.gradle -exec sed -i "s/$prefix$sub/$prefix$version_support/g" {} \;
+
+# Update ROOM library version.
+prefix="android\.arch\.persistence\.room\:runtime\:"
+sub="$vers"
+find $apppath/build.gradle -exec sed -i "s/$prefix$sub/$prefix$version_room/g" {} \;
+prefix="android\.arch\.persistence\.room\:compiler\:"
+sub="$vers"
+find $apppath/build.gradle -exec sed -i "s/$prefix$sub/$prefix$version_room/g" {} \;
 
 # Change deprecated "compile" to "implementation".
 sub="$vers"
