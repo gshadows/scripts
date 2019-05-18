@@ -1,8 +1,8 @@
 #!/bin/sh
 
 # === OPTIONS ===
-version_gradleplugin="3.3.0"
-version_gradle="4.10.1"
+version_gradleplugin="3.4.1"
+version_gradle="5.1.1"
 
 version_buildtools="28.0.3"
 version_minsdk="15"
