@@ -4,8 +4,8 @@
 version_gradleplugin="3.4.1"
 version_gradle="5.1.1"
 
-version_buildtools="28.0.3"
-version_minsdk="15"
+version_buildtools="29.0.0"
+#version_minsdk="15"
 version_compilesdk="28"
 version_targetsdk="28"
 
@@ -92,9 +92,9 @@ sub="\s*[\"\']$vers[\"\']"
 find $apppath/build.gradle -exec sed -i "s/$prefix$sub/$prefix\"$version_buildtools\"/g" {} \;
 
 # Set minimal SDK version.
-prefix="minSdkVersion "
-sub="\s*$num"
-find $apppath/build.gradle -exec sed -i "s/$prefix$sub/$prefix$version_minsdk/g" {} \;
+#prefix="minSdkVersion "
+#sub="\s*$num"
+#find $apppath/build.gradle -exec sed -i "s/$prefix$sub/$prefix$version_minsdk/g" {} \;
 
 # Set target SDK version.
 prefix="targetSdkVersion "
