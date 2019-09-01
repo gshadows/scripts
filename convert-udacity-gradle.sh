@@ -1,10 +1,10 @@
 #!/bin/sh
 
 # === OPTIONS ===
-version_gradleplugin="3.4.1"
-version_gradle="5.1.1"
+version_gradleplugin="3.5.0"
+version_gradle="5.4.1"
 
-version_buildtools="29.0.0"
+version_buildtools="29.0.2"
 #version_minsdk="15"
 version_compilesdk="28"
 version_targetsdk="28"
